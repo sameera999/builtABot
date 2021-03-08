@@ -20,6 +20,12 @@ function getNextValidIndex(index, length) {
 }
 
 export default {
+  created() {
+    this.$emit('partSelected', this.selectedPart);
+  },
+  updated() {
+    this.$emit('partSelected', this.selectedPart);
+  },
   props: {
     parts: {
       type: Array,
