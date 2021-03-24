@@ -1,6 +1,6 @@
 <template>
   <div class="part" :class="position">
-    <img :src="selectedPart.src" title="arm"/>
+    <img @click="ViewPartInfo()" :src="selectedPart.src" title="arm"/>
     <button @click="selectPreviousPart()" class="prev-selector"></button>
     <button @click="selectNextPart()" class="next-selector"></button>
     <span class="sale" v-show="selectedPart.onSale">Sale!</span>
@@ -60,7 +60,9 @@ export default {
         this.parts.length,
       );
     },
-
+    ViewPartInfo() {
+      this.$router.push('/parts');
+    },
   },
 };
 
@@ -72,6 +74,7 @@ export default {
   width:165px;
   height:165px;
   border: 3px solid #aaa;
+  cursor: pointer;
 }
 .sale {
   position: absolute;
