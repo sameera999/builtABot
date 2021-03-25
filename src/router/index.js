@@ -34,7 +34,7 @@ export default new Router({
   },
   {
     path: '/parts/browse',
-    name: 'Part',
+    name: 'BrowseParts',
     component: BrowseParts,
     children: [
       {
@@ -65,5 +65,9 @@ export default new Router({
     name: 'Part',
     component: PartInfo,
     props: true,
+    beforeEnter(to, from, next) {
+      const isValidId = Number.isInteger(Number(to.params.id));
+      next(isValidId);
+    },
   }],
 });
