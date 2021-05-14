@@ -23,6 +23,29 @@
         </tr>
       </tbody>
     </table>
+    <h1 class="cart-saleitems">You saved money on this items: </h1>
+    <table>
+      <thead>
+        <tr>
+          <th class="robot-title">
+            Robot
+          </th>
+          <th class="cost">
+            Cost
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(robot, index) in cartSaleItems" :key="index">
+          <td class="robot-title">
+            {{robot.head.title}}
+          </td>
+          <td class="cost">
+            {{robot.cost}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
  </div>
 </template>
 
@@ -32,6 +55,9 @@ export default {
   computed: {
     cart() {
       return this.$store.state.cart;
+    },
+    cartSaleItems() {
+      return this.$store.getters.cartSaleItems;
     },
   },
 };
