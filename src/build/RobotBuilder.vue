@@ -108,7 +108,7 @@ export default {
   },
   computed: {
     availableParts() {
-      return this.$store.state.parts;
+      return this.$store.state.robots.parts;
     },
     saleBorder() {
       return this.selectedRobot.head.onSale ? 'sale-border' : 'not-sale-border';
