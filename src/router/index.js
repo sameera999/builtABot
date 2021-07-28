@@ -33,6 +33,7 @@ export default new Router({
       sidebar: SidebarBuild,
     },
   },
+
   {
     path: '/parts/browse',
     name: 'BrowseParts',
@@ -59,7 +60,6 @@ export default new Router({
         component: RobotBases,
       },
     ],
-
   },
   {
     path: '/parts/:partType/:id',
